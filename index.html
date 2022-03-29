@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
-<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-<body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
-        <a-marker type='pattern' url='res/pattern-marker.patt'>
-            <!-- <a-entity position='-3 2 0' text="width: 5; value:I am Psyduck. We are pokemon. We love you"></a-entity> -->
-            <a-entity position='0 0 0' gltf-model="url(res/cook-loosun.glb)"></a-entity>
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+        <a-marker type="pattern" url="res/pattern-marker.patt">
+            <a-entity position="0 0 0" scale="0.05 0.05 0.05"
+                gltf-model="res/cook-loosun.glb">
+            </a-entity>
         </a-marker>
+        <a-entity camera></a-entity>
     </a-scene>
 </body>
+
+</html>
 </html>
